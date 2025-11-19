@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import alunoService from "../services/alunoService";
 
-export default function DetalhesProduto() {
+export default function DetalhesAluno() {
     const { id } = useParams();
     const [aluno, setAluno] = useState({});
 

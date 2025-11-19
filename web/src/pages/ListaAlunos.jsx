@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import alunoService from "../services/alunoService";
 
-export default function ListaProdutos() {
+export default function ListaAlunos() {
   const [alunos, setAlunos] = useState([]);
 
   const carregarAlunos = async () => {
