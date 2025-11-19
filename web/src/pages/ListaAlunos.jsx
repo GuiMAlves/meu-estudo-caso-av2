@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import produtoService from "../services/produtoService";
+import alunoService from "../services/alunoService";
 
 export default function ListaProdutos() {
-  const [produtos, setProdutos] = useState([]);
+  const [alunos, setAlunos] = useState([]);
 
-  const carregarProdutos = async () => {
-    const lista = await produtoService.listar();
-    setProdutos(lista);
+  const carregarAlunos = async () => {
+    const lista = await alunoService.listar();
+    setAlunos(lista);
   };
 
   useEffect(() => {
-    carregarProdutos();
+    carregarAlunos();
   }, []);
 
   return (
@@ -19,7 +19,7 @@ export default function ListaProdutos() {
         <div class="row">
           <div class="col-12">
             <div class="d-flex justify-content-between align-items-center mb-3">
-              <h3 class="mb-0">Lista de Produtos</h3>
+              <h3 class="mb-0">Lista de Alunos</h3>
             </div>
             <div class="card">
               <div class="card-body p-2">
@@ -28,18 +28,18 @@ export default function ListaProdutos() {
                     <thead class="table-light">
                       <tr>
                         <th>ID</th>
-                        <th>Produto</th>
-                        <th>Preço</th>
+                        <th>Nome</th>
+                        <th>Matrícula</th>
                         <th></th>
                       </tr>
                     </thead>
                     <tbody>
-                      {produtos.map((produto) => (
-                        <tr key={produto.id}>
-                          <td>{produto.id}</td>
-                          <td>{produto.nome}</td>
-                          <td>R$ {produto.preco}</td>
-                          <td><a href={`/product/${produto.id}`} class= "btn btn-sm btn-primary">Detalhes</a></td>
+                      {alunos.map((aluno) => (
+                        <tr key={aluno.id}>
+                          <td>{aluno.id}</td>
+                          <td>{aluno.nome}</td>
+                          <td>{aluno.matricula}</td>
+                          <td><a href={`/aluno/${aluno.id}`} class= "btn btn-sm btn-primary">Detalhes</a></td>
                         </tr>
                       ))}
                     </tbody>

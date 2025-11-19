@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import ListaProdutos from "../pages/ListaProdutos.jsx";
-import DetalhesProduto from "../pages/DetalhesProduto.jsx";
+import ListaAlunos from "../pages/ListaAlunos.jsx";
+import DetalhesAluno from "../pages/DetalhesAluno.jsx";
 
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<ListaProdutos />} />
-      <Route path="/product/:id" element={<DetalhesProduto />} />
+      <Route path="/" element={<ListaAlunos />} />
+      <Route path="/aluno/:id" element={<DetalhesAluno />} />
     </Routes>
   );
 }
